@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -23,30 +24,38 @@
           <div class="navbar-collapse collapse show" id="navbarNavDropdown" style>
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-                <li>
-                  <%= link_to "Home", user_path(current_user), class: 'fas fa-home nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-home nav-link text-light"></i>
+                  <%= link_to "Home", user_path(current_user.id), class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "Users", users_path, class: 'fas fa-users nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-users nav-link text-light"></i>
+                  <%= link_to "Users", users_path, class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "Books", books_path, class: 'fas fa-book-open nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas nav-link fa-book-open text-light"></i>
+                  <%= link_to "Books", books_path, class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: 'fas fa-sign-out-alt nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-sign-out-alt nav-link text-light"></i>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "text-light" %>
                 </li>
               <% else %>
-                <li>
-                  <%= link_to "Home", root_path, class: 'fas fa-home nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-home nav-link text-light"></i>
+                  <%= link_to "Home", root_path, class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "About", about_path, class: 'fas fa-link nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-link nav-link text-light"></i>
+                  <%= link_to "About", about_path, class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "Sign up", new_user_registration_path, class: 'fas fa-user-plus nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-user-plus nav-link text-light"></i>
+                  <%= link_to "Sign up", new_user_registration_path, class: 'text-light' %>
                 </li>
-                <li>
-                  <%= link_to "Log in", new_user_session_path, class: 'fas fa-sign-in-alt nav-link text-light' %>
+                <li class="row m-2">
+                  <i class="fas fa-sign-in-alt nav-link text-light"></i>
+                  <%= link_to "Log in", new_user_session_path, class: 'text-light' %>
                 </li>
               <% end %>
             </ul>
