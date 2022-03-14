@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
  */
-
  .notifications {
-   color: green;
- }
-
- #error_explanation {
-   color: red;
- }
+  color: green;
+}
